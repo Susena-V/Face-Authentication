@@ -41,6 +41,10 @@ A Python-based face recognition system was developed to enhance security for web
 - Tools used include Python, face_recognition library, Google Colab, and IPython.
 - Achieved a high accuracy rate, demonstrating the system's reliability.
 
+### Future Enhancements for Face Authentication in Web Applications:
+- **Two-Factor Authentication**: Implement double-factor authentication for signing in or performing critical operations.
+- **Gesture Recognition**: Extend the system to include gesture recognition, granting access by verifying both the user's face and gesture.
+
 ## Access the Project
 
 This project highlights the use of advanced AI techniques in enhancing security measures for web applications, providing a robust and user-friendly access control solution.
