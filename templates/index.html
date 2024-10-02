@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Webcam Authentication</title>
+</head>
+<body>
+    <h1>Authentication</h1>
+    <div class="welcome-text">Welcome to the Secure Login Portal</div> <!-- Welcome message -->
+    <div id="video-container">
+        <video id="video" autoplay></video>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="message"></div>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const messageDiv = document.getElementById('message');
+
+        // Ask for permission to use the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                // Start scanning for faces every 3 seconds
+                setInterval(captureAndSend, 3000); // Adjust the interval as needed
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+        function captureAndSend() {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert the canvas to a Blob
+            canvas.toBlob(blob => {
+                const formData = new FormData();
+                formData.append('image', blob, 'captured_image.jpg');
+
+                // Send the image to the backend for verification
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    messageDiv.textContent = data.message;
+                    if (data.message === 'Access Granted') {
+                        window.location.href = '/page'; 
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

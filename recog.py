@@ -1,7 +1,12 @@
 import cv2
-from deepface import DeepFace
+import face_recognition
+import numpy as np
 
 def capture_and_recognize(reference_image_path):
+    # Load the reference image and encode it
+    reference_image = face_recognition.load_image_file(reference_image_path)
+    reference_encoding = face_recognition.face_encodings(reference_image)[0]
+
     # Initialize the webcam
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
@@ -15,31 +20,31 @@ def capture_and_recognize(reference_image_path):
         cap.release()
         return False
 
-    # Save the captured frame to a temporary image file
-    captured_image_path = "captured_image.jpg"
-    cv2.imwrite(captured_image_path, frame)
+    # Convert the frame from BGR to RGB
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    # Find all the faces in the captured frame
+    face_locations = face_recognition.face_locations(rgb_frame)
+    face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
     # Release the webcam
     cap.release()
 
-    try:
-        # Use DeepFace to verify the captured image against the reference image
-        result = DeepFace.verify(img1_path=reference_image_path, img2_path=captured_image_path)
-        
-        if result['verified']:
+    # Check if any faces were found in the frame
+    for face_encoding in face_encodings:
+        # Compare the captured face with the reference face
+        matches = face_recognition.compare_faces([reference_encoding], face_encoding)
+
+        if True in matches:
             print("Face verified successfully.")
             return True
-        else:
-            print("Face not recognized.")
-            return False
 
-    except Exception as e:
-        print(f"Error during face recognition: {e}")
-        return False
+    print("Face not recognized.")
+    return False
 
 if __name__ == "__main__":
     # Path to your reference image (an image of your face stored locally)
-    reference_image = "your_face.jpg"
+    reference_image ="Susena.jpg"
     
     # Capture and recognize face
     is_authenticated = capture_and_recognize(reference_image)

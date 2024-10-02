@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susena</title>
+    <link rel="icon" type="image/png" href="/Image.png">
+    <link href='https://fonts.googleapis.com/css?family=Arapey' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Aref Ruqaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bellefair' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+
+    <style>
+        .left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 22%; /* Adjust as needed */
+            height: 100%;
+            background: url('{{ url_for("static", filename="Sus_Purple.png") }}') no-repeat center center;    background-size: cover;
+            z-index: 1; /* Ensure it stays behind the content */
+            overflow: hidden; /* Ensure content does not overflow */
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="left">
+        <div class="overlay">
+            <p>Hello! I'm Susena, a passionate Artificial Intelligence and Data Science student with a love for innovative technology. As a lifelong learner, I'm excited to share a bit about myself. Welcome to my personal corner of the web!</p>
+            <a href="https://www.linkedin.com/in/susena-venkatesh-nathan" target="_blank">LinkedIn</a>
+            <br>
+            <a href="https://github.com/Susena-V" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="buttons-container">
+            <button class="btn">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </div>
+        <div class="header">
+            <h1>Susena Venkatesh Nathan</h1>
+        </div>
+        <div class="content-container">
+            <div class="content">
+
+                <h2>Education</h2>
+                <p><strong>Shiv Nadar University Chennai</strong><br>
+                   Pursuing Bachelor of Technology in Artificial Intelligence and Data Science<br>
+                   CGPA: 9.0 (as of 4th semester)<br>
+                   Expected Graduation: 2026<br>
+                   Student Ambassador, April 2024 - Present</p>
+                <p><strong>Union Christian Public School</strong><br>
+                   School 2nd with 94.2% in All India Senior School Certificate Examination 2022<br>
+                   2012-2022</p>
+
+                <h2>Projects</h2>
+                <ul>
+                    <li><strong>OCR in Python with Web UI:</strong> Developed Python backend for image character recognition with Flask integration. Engineered a user-friendly web interface for seamless image uploads. Integrated OCR technology to display detected text, enhancing user experience.</li>
+                    <li><strong>Lung Cancer Detection using CNNs:</strong> Developed a state-of-the-art CNN model for early detection of lung cancer, achieving a 98% accuracy rate in classifying CT scan images. Utilized TensorFlow, Keras, and OpenCV as the primary Python libraries.</li>
+                    <li><strong>Face Authentication for Web Application Access:</strong> Created a Python-based face recognition system for robust web application access control. Detected faces and verified registration, allowing access if registered; achieved a 90% accuracy rate.</li>
+                    <li><strong>Data Visualization and Analysis in Tableau:</strong> Harnessed Tableau to analyze global statistics and visualize sales/profit data for actionable insights. Created several dashboards and a comprehensive Storyboard for detailed visualization and analysis of data.</li>
+                    <li><strong>Hotel Management System:</strong> Implemented a Hotel Management System in Java using OOP principles, incorporating functionalities for checking-in, checking-out, ordering food, and billing.</li>
+                </ul>
+
+                <h2>Certifications</h2>
+                <ul>
+                    <li>NextWave Certification for participation in the workshop 'AI for Students: Build Your Own Generative AI Model'.</li>
+                    <li>Completed NPTEL's 'Joy of Computation in Python' course with a silver elite badge.</li>
+                    <li>Certificate of Attendance for ‘AWS Summit India 2024’.</li>
+                    <li>Certificate of Participation for ‘Samsung Solve for Tomorrow’.</li>
+                </ul>
+
+                <h2>Hackathons and Technical Events Experience</h2>
+                <ul>
+                    <li>Participated in ‘Google Girl Hackathon 2023’</li>
+                    <li>Participated in ‘Smart India Hackathon 2023’</li>
+                    <li>Participated in ‘Samsung Solve for Tomorrow 2024’</li>
+                    <li>Currently enrolled for ‘Flipkart GRiD 6.0 - Software Development Track’, ‘TVS Credit E.P.I.C 6.0 — Analytics Challenge’, ‘Information Technology for Public Good’ by Anna University</li>
+                    <li>Attended Google’s on-invite ‘GenAI Training’ through DigiAlert Ltd.</li>
+                </ul>
+
+                <h2>Skills, Knowledge, Tools & Technologies</h2>
+                <ul>
+                    <li>Machine Learning: Classification, Regressions, GMMs, Applications</li>
+                    <li>Deep Learning: CNNs, ANNs, Applications</li>
+                    <li>Exploratory Data Analysis & Visualization: Python (Pandas, Seaborn, Matplotlib), Tableau, Grafana, Dash</li>
+                    <li>Programming Languages/Skills: Python, Java, C, HTML, CSS, JavaScript, MySQL, PostgreSQL</li>
+                    <li>Frameworks: NumPy, Pandas, Seaborn, Matplotlib, TensorFlow, Keras, OpenCV, Scikit-Learn, Regex, ARIMA model, Flask, Express</li>
+                    <li>Tools and Technologies: VSCode, Anaconda, Jupyter Notebook, Tableau, Dash, Grafana, Eclipse IDE, JavaScript, Google APIs | Development using Windows, Ubuntu and MacOS | GIT, MySQL, PostgreSQL, Excel, Google Sheets</li>
+                    <li>Cloud Technologies: Google Cloud APIs, AWS, Azure</li>
+                </ul>
+
+                <h2>Work Experience</h2>
+                <p><strong>DigiAlert Ltd.</strong><br>
+                   <em>AI/ML Intern (May 2024 - June 2024)</em><br>
+                   Developed an AI-based data leakage prevention product using NLP, Regular Expressions, transformers, Python, and JavaScript to detect PII, PHI, and confidential information.<br>
+                   Automated CI/CD pipelines for seamless integration and delivery of software updates.<br>
+                   Created a real-time data analytics dashboard for comprehensive visualization of security metrics and breach incidents.<br>
+                   Enhanced scalability and performance through optimized code, efficient data structures, databases, and algorithm design techniques.<br>
+                   <br>
+                   <em>Intern Lead (July 2024 - Present)</em><br>
+                   Team Management: Managed a team of 7 members, guiding and overseeing all team tasks, including task allocation and performance.<br>
+                   Product Definition: Assisted the product owner in defining features and adding enhanced features to the product.<br>
+                   Product Design & Architecture: Designed the product and its software architecture, ensuring alignment with strategic goals.<br>
+                   Cloud Deployment: Oversaw the deployment of scalable solutions on AWS/Azure.<br>
+                   Strategy & Execution: Developed strategies, managed backlogs, and advocated for users.<br>
+                   Technical Leadership: Mentored the team, enforced coding standards, and guided technical decisions.<br>
+                   Repository Management: Managed and owned the Git repository, ensuring version control and collaboration.</p>
+                   <br>
+                <p><strong>Infysec Ltd.</strong><br>
+                   <em>Artificial Intelligence and Data Science Intern (December 2023)</em><br>
+                   Leveraged AI and ML for real-time and offline anomaly detection in email ecosystems and networks.<br>
+                   Employed data analytics to scrutinize anomalies effectively.<br>
+                   Implemented a logistic regression model to detect anomalies in email logs, bolstering cybersecurity with a 95% accuracy rate.<br>
+                   Utilized Grafana to visualize real-time security data, deploying dashboards on Azure and AWS for client delivery.<br>
+                   Automated responses using an AI & ML engine on open-source SIEM logs (Wazuh) for enhanced security.</p>
+
+                <h2>Achievements</h2>
+                <ul>
+                    <li>Achieved a Top 1% ranking in the AI/ML Intern role at DigiAlert Ltd. (July 2024 – Present)</li>
+                    <li>Ranked 2nd place at Smart India Hackathon 2023</li>
+                    <li>Received the ‘Star Performer’ award in Google’s ‘GenAI Training’ by DigiAlert Ltd.</li>
+                    <li>Achieved a 90% accuracy rate in Python-based face recognition system for web application access control</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

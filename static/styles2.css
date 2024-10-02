@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bellefair'; font-size: 20px;
+    display: flex;
+    height: 100vh;
+    color: white;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* For positioning overlay */
+   /*background: url('https://media.giphy.com/media/3ohhwJlKHGchQUtvBS/giphy.gif') no-repeat center center fixed;*/
+   background: url('https://gifdb.com/gif/incredible-sound-wave-art-hxgh3rtf5v8vvh5i.html?embed=true') no-repeat center center fixed;
+   background-color: white;
+    background-size: cover;
+}
+
+.left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 22%; /* Adjust as needed */
+    height: 100%;
+    background: url('{{ url_for("static", filename="Sus_Purple.png") }}') no-repeat center center;    background-size: cover;
+    z-index: 1; /* Ensure it stays behind the content */
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+.left .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height of .left */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the top */
+    align-items: flex-start; /* Align content to the left */
+    padding: 22px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensure it is above the background image */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    transition: background 0.3s;
+}
+
+.left:hover .overlay {
+    background: rgba(220, 200, 255, 0.8); /* Darker background on hover */
+    justify-content: flex-start;
+    transition: background 0.3s;
+    color: black;
+}
+
+.left .overlay a {
+    color: #aa99ff; /* Default link color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.left:hover .overlay a {
+    color: #991188; /* New link color on hover */
+    text-decoration: underline; /* Optional: add underline to links on hover */
+}
+
+.right {
+    margin-left: 22%; /* Match the width of the .left column */
+    width: 78%; /* Adjust to fit the rest of the screen */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For positioning content */
+    z-index: 3; /* Ensure it is above the .left column */
+    padding: 20px;
+}
+
+.buttons-container {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    z-index: 4; /* Ensure it is above other content */
+}
+
+.btn {
+    background-color: #aa99ff; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    margin: 5px; /* Space between buttons */
+    font-family: 'Bellefair'; /* Button font */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn:hover {
+    background-color: #991188; /* Button background color on hover */
+}
+
+.header {
+    color: rgb(220, 150, 255);
+    text-align: left;
+}
+
+.header h1 {
+    font-family: 'Arapey';
+    font-size: 50px;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.content-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 18px;
+    position: relative;
+    z-index: 3; /* Ensure it is above the overlay */
+    overflow: auto;
+}
+
+h2 {
+    font-family: 'Aref Ruqaa';
+    font-size: 22px;
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+}
+
+p {
+    margin-bottom: 15px; /* Space below each paragraph */
+    line-height: 1.6; /* Improve readability */
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px; /* Space below each list */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        flex-direction: column;
+    }
+    .left, .right {
+        position: static; /* Reset position for stacking layout */
+        width: 100%; /* Full width for stacked layout */
+        height: auto; /* Allow height to adjust */
+    }
+}
