@@ -53,3 +53,4 @@ def upload_image():
 if __name__ == '__main__':
     os.makedirs('uploads', exist_ok=True)  # Ensure uploads directory exists
     app.run(debug=True)
+    print("App is executing")
